@@ -1,4 +1,32 @@
-.App-Footer{
-    background-color: silver;
-    padding: 5px;
+.footer{
+  background:#3e2723;
+  color:white;
+  padding:30px 20px;
+  text-align:center;
+}
+
+.footer h3{
+  font-family:cursive;
+  color:#ffcc80;
+  margin-bottom:10px;
+}
+
+.footer-links{
+  margin:15px 0;
+}
+
+.footer-links a{
+  color:#ffcc80;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  text-decoration:underline;
+}
+
+.copyright{
+  font-size:14px;
+  margin-top:10px;
+  opacity:0.8;
 }
