@@ -1,0 +1,58 @@
+.orders-container{
+  padding:60px;
+  background:#fafafa;
+  min-height:80vh;
+}
+
+.orders-title{
+  text-align:center;
+  margin-bottom:40px;
+  color:#3e2723;
+}
+
+.orders-list{
+  max-width:900px;
+  margin:auto;
+}
+
+.order-card{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  margin-bottom:25px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.order-id{
+  color:#ff9800;
+  margin-bottom:15px;
+}
+
+.order-items ol{
+  margin-left:20px;
+}
+
+.order-item{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+}
+
+.item-name{
+  flex:1;
+}
+
+.item-details{
+  width:120px;
+}
+
+.item-total{
+  width:80px;
+  text-align:right;
+}
+
+.order-total{
+  text-align:right;
+  margin-top:10px;
+  color:#3e2723;
+}

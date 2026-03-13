@@ -1,36 +1,55 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AppContext } from "../App";
 import { useContext } from "react";
+import { FaShoppingCart } from "react-icons/fa";
+
 function Header() {
-  const { user } = useContext(AppContext);
+  const { user, cart } = useContext(AppContext);
+
   return (
-    <div className="App-Header">
-      <h1>My Store</h1>
-      <ul>
+    <div className="header">
+
+    <NavLink to="/" className="logo">
+      ☕ Bakingo
+    </NavLink>
+
+      <ul className="nav-links">
+
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
-        <li>
-          <Link to="/cart">Cart</Link>
+
+        <li className="cart-icon">
+          <NavLink to="/cart">
+            <FaShoppingCart />
+
+            {cart?.length > 0 && (
+              <span className="cart-count">{cart.length}</span>
+            )}
+          </NavLink>
         </li>
-        
+
         {user?.email ? (
           <>
             <li>
-              <Link to="/orders">Order</Link>
+              <NavLink to="/orders">Orders</NavLink>
             </li>
+
             <li>
-              <Link to="/logout">Logout</Link>
+              <NavLink to="/logout">Logout</NavLink>
             </li>
           </>
         ) : (
           <li>
-            <Link to="/login">Login</Link>
+            <NavLink to="/login">Sign In</NavLink>
           </li>
         )}
+
       </ul>
+
     </div>
   );
 }
+
 export default Header;

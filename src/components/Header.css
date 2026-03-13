@@ -1,12 +1,80 @@
-.App-Header{
-  background-color: rgba(190, 182, 33, 0.944);
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:15px 40px;
+  background:#3e2723;
 }
 
-.App-Header li {
-    display: inline-block;
-    font-size: 20;
-    padding: 5px;
+/* LOGO */
+
+.logo{
+  font-family:cursive;
+  font-size:32px;
+  color:#ffcc80;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+  letter-spacing:1px;
+}
+
+/* NAV */
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+
+.nav-links a{
+  font-family:cursive;
+  font-size:20px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  letter-spacing:1px;
+  transition:0.3s;
+}
+
+/* Hover effect */
+
+.nav-links a:hover{
+  color:#ffcc80;
+}
+
+/* Active page */
+
+.nav-links a.active{
+  color:#ff9800;
+  border-bottom:2px solid #ff9800;
+  padding-bottom:4px;
+}
+
+/* CART */
+
+.cart-icon{
+  position:relative;
+}
+
+.cart-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+
+  background:#ff9800;
+  color:white;
+
+  font-size:12px;
+  width:18px;
+  height:18px;
+
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }

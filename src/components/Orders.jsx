@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import axios from "axios";
+import "./Orders.css";
+
 function Orders() {
   const API_URL = import.meta.env.VITE_API_URL;
   const { user } = useContext(AppContext);
@@ -23,27 +25,55 @@ function Orders() {
   }, []);
 
   return (
-    <div>
-      <h1>My Orders</h1>
-      <div>
+    <div className="orders-container">
+
+      <h1 className="orders-title">📦 My Orders</h1>
+
+      <div className="orders-list">
+
         {orders &&
           orders.map((order) => (
-            <div key={order._id}>
-              <h3>Order Id: {order.orderDate}</h3>
-              <ol>
-                {order.items.map((item) => (
-                  <li key={item._id}>
-                    {item.name}-{item.price}-{item.quantity}-
-                    {item.price * item.quantity}
-                  </li>
-                ))}
-              </ol>
-              <h3>Order Value: {order.orderValue}</h3>
-              <hr />
+            <div className="order-card" key={order._id}>
+
+              <h3 className="order-id">
+                Order Id: {order.orderDate}
+              </h3>
+
+              <div className="order-items">
+
+                <ol>
+                  {order.items.map((item) => (
+                    <li key={item._id} className="order-item">
+
+                      <span className="item-name">
+                        {item.name}
+                      </span>
+
+                      <span className="item-details">
+                        ₹{item.price} × {item.quantity}
+                      </span>
+
+                      <span className="item-total">
+                        ₹{item.price * item.quantity}
+                      </span>
+
+                    </li>
+                  ))}
+                </ol>
+
+              </div>
+
+              <div className="order-total">
+                <h3>Order Value: ₹{order.orderValue}</h3>
+              </div>
+
             </div>
           ))}
+
       </div>
+
     </div>
   );
 }
+
 export default Orders;
